@@ -2,5 +2,5 @@
 
 
 test jeki jeki
-.
+.nm
 }}}
