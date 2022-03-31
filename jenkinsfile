@@ -1,22 +1,15 @@
 pipeline {
     agent any
-    
-    tools {nodejs "node"}
-    
     stages {
-        stage('Cloning Git') {
+            echo 'Works'
+        stage('Build image') {
             steps {
-                git 'https://github.com/DeveloperWakeling/mocha_testing'
-            }
-        }
-        stage('Install Dependencies'){
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage ('Test') {
-            steps {
-                sh 'npm test'
+                echo 'Starting to build docker image'
+
+                script {
+                    def customImage = docker.build("my-image:${env.BUILD_ID}")
+                    customImage.push()
+                }
             }
         }
     }

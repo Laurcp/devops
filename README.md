@@ -7,3 +7,8 @@ test jeki jeki
 xcvbnm,
 m
 .
+//
+fghjkl
+.
+k
+m
